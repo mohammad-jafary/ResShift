@@ -46,7 +46,7 @@ diffusion:
 
 autoencoder: 
   target: ldm.models.autoencoder.VQModelTorch
-  ckpt_path: weights/ffhq512_vq_f8_dim8_face.pth
+  ckpt_path: /content/things/things/ffhq512_vq_f8_dim8_face.pth
   use_fp16: True
   params:
     embed_dim: 8
@@ -76,7 +76,7 @@ data:
   train:
     type: gfpgan 
     params:
-      dir_path: /mnt/sfs-common/zsyue/database/FFHQ/images512x512
+      dir_path: /content/things/things/dataset
       im_exts: png
       io_backend:
         type: disk
@@ -117,19 +117,19 @@ train:
   lr: 5e-5                      # learning rate 
   lr_min: 2e-5
   lr_schedule: cosin
-  warmup_iterations: 5000
+  warmup_iterations: 50
   # dataloader
-  batch: [56, 8]                
-  microbatch: 7
-  num_workers: 6
+  batch: [16, 4]                
+  microbatch: 2
+  num_workers: 2
   prefetch_factor: 2            
   # optimization settings
   weight_decay: 0               
   ema_rate: 0.999
-  iterations: 400000            # total iterations
+  iterations: 4000            # total iterations
   # save logging
-  save_freq: 10000
-  log_freq: [200, 2000, 1]         # [training loss, training images, val images]
+  save_freq: 100
+  log_freq: [20, 200, 1]         # [training loss, training images, val images]
   loss_coef: [1.0, 10.0]         # [mse, lpips]
   local_logging: True           # manually save images
   tf_logging: False             # tensorboard logging
