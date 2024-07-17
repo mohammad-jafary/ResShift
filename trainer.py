@@ -62,6 +62,10 @@ class TrainerBase:
 
         self.num_gpus = num_gpus
         self.rank = int(os.environ['LOCAL_RANK']) if num_gpus > 1 else 0
+        #####
+        print(self.rank)
+        print(self.num_gpus)
+        #####
 
     def setup_seed(self, seed=None, global_seeding=None):
         if seed is None:
