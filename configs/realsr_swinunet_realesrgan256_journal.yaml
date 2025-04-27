@@ -98,7 +98,8 @@ data:
   train:
     type: realesrgan
     params:
-      dir_paths: dataset/train/gt
+      dataroot_gt: dataset/train/gt
+      dataroot_lq: dataset/train/lq
       im_exts: png
       io_backend:
         type: disk
