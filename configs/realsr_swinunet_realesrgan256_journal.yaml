@@ -27,7 +27,7 @@ autoencoder:
 model:
   target: models.unet.UNetModelSwin
   #ckpt_path: /mnt/lustre/zsyue/projects/ResShift/SR/models/swin_v2/Esr256_ImageNet_rescale/S5_K2.0_P0.3/ema_ckpts/ema_model_300000.pth
-  ckpt_path: resshift_deblur_s4.pth
+  ckpt_path: resshift_realsrx4_s4_v3.pth
   params:
     image_size: 64
     in_channels: 3
