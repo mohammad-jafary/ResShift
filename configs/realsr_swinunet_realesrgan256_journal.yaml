@@ -100,7 +100,7 @@ data:
     params:
       dataroot_gt: dataset/train/gt
       dataroot_lq: dataset/train/lq
-      im_exts: png
+      im_exts: jpg
       io_backend:
         type: disk
       blur_kernel_size: 21
@@ -130,7 +130,7 @@ data:
    type: base
    params:
      dir_path: dataset/val/lq
-     im_exts: png
+     im_exts: jpg
      transform_type: default
      transform_kwargs:
          mean: 0.5
